@@ -100,6 +100,9 @@ controls.enableZoom = false;   // keep mouse-wheel scrolling the page
 controls.enablePan = false;
 controls.autoRotate = !reduceMotion;
 controls.autoRotateSpeed = 0.9;
+// touch: vertical swipe scrolls the page, horizontal swipe rotates the object
+controls.touches = { ONE: THREE.TOUCH.ROTATE, TWO: THREE.TOUCH.NONE };
+renderer.domElement.style.touchAction = 'pan-y'; // OrbitControls sets 'none', which blocks scrolling
 
 // ----- Animation loop -----
 const clock = new THREE.Clock();
